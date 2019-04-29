@@ -1,19 +1,11 @@
 <?php
 use App\Core\App;
-    if (isset($_POST["id"])) { //Checks if action value exists
-        $productID = $_POST["id"];
-
-    try {
-            $productAttributes = App::get('database')->selectAttributes($productID, 'Attribut');
-        }
-    catch(Exception $e)
+    if (isset($_POST["id"]))
     {
-       // header('Location /');
-    }
+        $productID = $_POST["id"];
+        $productAttributes = App::get('database')->selectAttributes($productID, 'Attribut');
 
     $atrNumber = count($productAttributes)+1;
-
-
 
     foreach ($productAttributes as $attribute)
     {

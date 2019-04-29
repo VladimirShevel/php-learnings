@@ -121,12 +121,10 @@ class QueryBuilder
         try {
 
             $statement = $this->pdo->prepare($sql);
-
             $statement->execute();
+        }
 
-           // echo '<h2>Ваш запис додано</h2>';
-
-        } catch (Exception $e) {
+        catch (Exception $e) {
             error_log($e);
             echo 'Запис до бази даних додано не було ((';
 
