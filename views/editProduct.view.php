@@ -1,5 +1,5 @@
 <?php require 'views/templates/header.php'; ?>
-    <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand">Edit product Page</a>
@@ -19,42 +19,42 @@
         <input type="hidden" name="editProduct" value="1">
         <br>
         Product Name <br>
-        <input type="text"  name="name" value="<?php echo $product->getProductName()?>"> <br>
+        <input type="text" size="98" name="name" value="<?php echo $product->getProductName()?>"> <br>
         <br>
         Product description<br>
-        <textarea name="description" <?php echo $product->getProductDescription()?> rows="5" cols="40"><?php echo $product->getProductDescription()?></textarea><br>
+        <textarea name="description" <?php echo $product->getProductDescription()?> rows="20" cols="100"><?php echo $product->getProductDescription()?></textarea><br>
         <br>
         Product Price <br>
-        <input type="text"  name="price" value="<?php echo $product->getProductPrice()?>"><br>
+        <input type="text"  name="price" value="<?php echo $product->getProductPrice()?>">UAH<br>
         <br>
 
     </fieldset>
     <p>Product Attributes</p>
-    
-
-
-<!--            <input type="hidden" id = "productid" name="productid" value="--><?//= $product->getProductId() ?><!--">-->
-            <div>
-                <table id="myTable" class="table table-bordered">
+    <div>
+        <table id="myTable" class="table table-bordered">
                     <input type='hidden' name='_ATTRIBUTES_'>
                     <?php
                         $counter = 1;
-                            foreach ($product->productAttrib as $attribut => $value) { if ($value == null) break;
-                            echo '<input name="attribName' . $counter . '" type="hidden" value="' . $value->attribName . '">';
-                            echo '<div><tr><td>'.$value->attribName.'</td>';
-                            echo '<td><select id="attribValue'.$counter .'" name="attribValue' . $counter . '"><option>' . $value->attributeValue . '</option>';
-                            foreach ($productAttribAllValues as $attribName => $attribValues) {
-                                if ($attribName == $value->attribName) {
-                                    foreach ($attribValues as $attribvalue) {
-                                        if (!($attribvalue == $value->attributeValue))
+                            foreach ($product->productAttrib as $attribut => $value)
+                            {
+                                if ($value == null) break;
+                                echo '<input name="attribName' . $counter . '" type="hidden" value="' . $value->attribName . '">';
+                                echo '<div><tr><td>'.$value->attribName.'</td>';
+                                echo '<td><select id="attribValue'.$counter .'" name="attribValue' . $counter . '"><option>' . $value->attributeValue . '</option>';
+                                foreach ($productAttribAllValues as $attribName => $attribValues)
+                                {
+                                    if ($attribName == $value->attribName)
+                                    {
+                                        foreach ($attribValues as $attribvalue)
+                                        {
+                                            if (!($attribvalue == $value->attributeValue))
                                             echo "<option>{$attribvalue}</option>";
+                                        }
                                     }
                                 }
-                            }
                             echo '</select></td><td><a href="http://php-learnings/deleteAtr?id='.$product->getProductId().'&attribut='.$value->code.'" title="delete">delete</a></td></tr></div>';
                             $counter++;
-                        }
-
+                            }
                     ?>
                     <tr id="new_attrib" name=""></tr>
                 </table>

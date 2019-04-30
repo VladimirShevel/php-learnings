@@ -25,7 +25,7 @@
       ?>
     </table>
     <div id="pagination">
-<!--        <span>Pages</span>-->
+
         <?php if ($currentpage != 1) { ?>
             <a href="/" title="First Page">First</a>
             <a href="<?php if ($currentpage == 2) { ?><?=$url?><?php } else { ?><?=$url_page.($currentpage - 1)?><?php } ?>" title="Previous Page">Prev</a>

@@ -1,4 +1,5 @@
 <?php require 'views/templates/header.php'; ?>
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -19,10 +20,10 @@
         <input type="hidden" name="showProduct" value="1">
         <br>
         Product Name <br>
-        <input type="text" value="<?php echo $product->getProductName()?>" disabled> <br>
+        <input type="text" size="98" value="<?php echo $product->getProductName()?>" disabled> <br>
         <br>
         Product description<br>
-        <textarea disabled <?php echo $product->getProductDescription()?> rows="5" cols="40"><?php echo $product->getProductDescription()?></textarea><br>
+        <textarea disabled <?php echo $product->getProductDescription()?> rows="20" cols="100"><?php echo $product->getProductDescription()?></textarea><br>
         <br>
         Product Price <br>
         <input type="text" value="<?php echo $product->getProductPrice()?>" disabled><br>

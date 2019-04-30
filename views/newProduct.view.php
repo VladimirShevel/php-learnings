@@ -16,16 +16,16 @@
     <fieldset>
         <br>
         Product Name <br>
-        <input type="text" name="productName"> <br>
+        <input type="text" size="98" name="productName"> <br>
         <br>
         Product description<br>
-        <textarea name="productDescription" rows="5" cols="40"></textarea><br>
+        <textarea name="productDescription" rows="20" cols="100"></textarea><br>
         <br>
         Product Price <br>
-        <input type="text" name="productPrice"><br>
+        <input type="text" name="productPrice">UAH<br>
         <br>
 
     </fieldset>
-    <input type="submit" name="submit" value="Add prod">
+    <input type="submit" name="submit" value="Add product">
         </form>
 <?php require 'views/templates/footer.php' ?>
