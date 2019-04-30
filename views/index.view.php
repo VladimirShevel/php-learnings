@@ -17,7 +17,7 @@
         foreach ($allProducts as $data => $row)
             {
                 echo '<tr><td>'.$row->getProductName().'</td>';
-                echo '<td>'.$row->getProductDescription().'</td>';
+                echo '<td>'.substr($row->getProductDescription(),0, 100).'...</td>';
                 echo '<td>'.$row->getProductPrice().'</td>';
                 echo '<td><a href="details?id='.$row->getProductId().'" class="btn btn-default">Show Details</a>
 <a href="deleteProduct?id='.$row->getProductId().'" class="btn btn-default">Delete this One</a></td></tr>';
@@ -25,7 +25,6 @@
       ?>
     </table>
     <div id="pagination">
-
         <?php if ($currentpage != 1) { ?>
             <a href="/" title="First Page">First</a>
             <a href="<?php if ($currentpage == 2) { ?><?=$url?><?php } else { ?><?=$url_page.($currentpage - 1)?><?php } ?>" title="Previous Page">Prev</a>
@@ -38,5 +37,4 @@
             <a href="<?=$url_page.$totalpages?>" title="Last Page">Last</a>
         <?php } ?>
     </div>
-
 <?php require 'views/templates/footer.php'; ?>

@@ -65,7 +65,6 @@
     <br>
 
     <script>
-
         $(document).ready(function(){
             $("#setAttribute").click(function(){
                 $("#edit").submit();
@@ -73,7 +72,7 @@
 
 
             $("#btn1").click(function(){
-                var id = $('#productid').val();         //     data = $(this).serialize() + "&" + $.param(data);
+                var id = $('#productid').val();
                 $.ajax({
                     url: "selectattribute",
                     method: "POST",
@@ -103,8 +102,6 @@
                                 $('#nextVal').children('option').remove();
                                 $("#nextVal").append('<option>Choose attribut first</option>');
                             }
-
-                            // alert( data.json );
                         });
                         } else alert ("There are no any new attributes for for this product");
                         $("#btn2").on('click', function () {
@@ -116,7 +113,6 @@
             });
 
     });
-
     </script>
 
 <?php require 'views/templates/footer.php'; ?>
