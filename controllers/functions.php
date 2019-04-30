@@ -1,6 +1,6 @@
 <?php
 use App\Core\App;
-//-----------------------------Functions----------------------------------
+//-----------------------------Functions----------------------------------------
 function Getfloat($str)
 {
     if(strstr($str, ",")) {
@@ -14,7 +14,17 @@ function Getfloat($str)
         return floatval($str); // take some last chances with floatval
     }
 }
+//------------------------------------------------------------------------------
 
+function text_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    $data = addslashes($data);
+    return $data;
+}
+
+//------------------------------------------------------------------------------
 
 function getProductFromEditForm($data)
 {
@@ -24,8 +34,8 @@ function getProductFromEditForm($data)
     {
         next($data);
         if ($key == 'productid') $product->setProductId($value);
-        if ($key == 'name') $product->setProductName($value);
-        if ($key == 'description') $product->setProductDescription($value);
+        if ($key == 'name') $product->setProductName(text_input($value));
+        if ($key == 'description') $product->setProductDescription(text_input($value));
         if ($key == 'price') $product->setProductPrice(Getfloat($value));
 
         if ($key == '_ATTRIBUTES_') { $flag = true; }
@@ -56,8 +66,8 @@ function updateProduct($product)
 {
     $sql = 'UPDATE product SET 
         productid = "'.$product->getProductid().'", 
-        productName = "'.addslashes($product->getProductName()).'", 
-        productDescription = "'.addslashes($product->getProductDescription()).'", 
+        productName = "'.$product->getProductName().'", 
+        productDescription = "'.$product->getProductDescription().'", 
         productPrice = "'.$product->getProductPrice().' "WHERE productid = "'.$product->getProductid().'"';
 
     App::get('database')->update($sql);
@@ -113,4 +123,12 @@ function getProductAttribAllValues($product)
         }
     }
     return $productAttribAllValues;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+
+function deleteAtr($prId, $atrId)
+{
+    $sql = "DELETE FROM product_attribute WHERE productid = {$prId} AND attributeid={$atrId}";
+    App::get('database')->deleteProductAttribute($sql);
 }

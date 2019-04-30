@@ -29,7 +29,6 @@ class QueryBuilder
 
     public function deleteProductAttribute($string)
     {
-
         $statement = $this->pdo->prepare($string);
         $statement ->execute();
     }

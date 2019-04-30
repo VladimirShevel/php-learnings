@@ -4,8 +4,8 @@ include 'functions.php';
 
     if (isset($_POST['submit']))
     {
-        $productName = $_POST['productName'];
-        $productDescription = $_POST['productDescription'];
+        $productName = text_input($_POST['productName']);
+        $productDescription = text_input($_POST['productDescription']);
         $productPrice = getFloat($_POST['productPrice']);
 
         App::get('database')->insert('product', [
@@ -13,6 +13,7 @@ include 'functions.php';
             'productDescription' => $productDescription,
             'productPrice' => $productPrice
             ]);
-
+        echo '<h2>Product added</h2>';
+        sleep(1);
         header('Location: /');
     }

@@ -19,7 +19,7 @@
         <input type="hidden" name="editProduct" value="1">
         <br>
         Product Name <br>
-        <input type="text" size="98" name="name" value="<?php echo $product->getProductName()?>"> <br>
+        <input type="text" size="98" name="name" value="<?php echo $product->getProductName()?>" required> <br>
         <br>
         Product description<br>
         <textarea name="description" <?php echo $product->getProductDescription()?> rows="20" cols="100"><?php echo $product->getProductDescription()?></textarea><br>
@@ -80,7 +80,7 @@
                     data: {id:id},
                     success: function(data) {
                         if (data.json){
-                            var newAttrib = $('<td>' + data.text + '</td><td><select id="nextVal" name="attribValue'+data.nextAtr +'"></select></td><td><button id="btn2">SetAttribut</button></td>');
+                            var newAttrib = $('<td>' + data.text + '</td><td><select id="nextVal" name="attribValue'+data.nextAtr +'"></select></td>');
                         $("#new_attrib").append(newAttrib);
                         $("#btn1").hide();
                         $("#nextAttribName").on("change", function () {
@@ -104,10 +104,10 @@
                             }
                         });
                         } else alert ("There are no any new attributes for for this product");
-                        $("#btn2").on('click', function () {
-                            $("#edit").submit();
-
-                        })
+                        // $("#btn2").on('click', function () {
+                        //     $("#edit").submit();
+                        //
+                        // })
                     }
                 });
             });

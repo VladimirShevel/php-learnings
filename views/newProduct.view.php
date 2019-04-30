@@ -16,7 +16,7 @@
     <fieldset>
         <br>
         Product Name <br>
-        <input type="text" size="98" name="productName"> <br>
+        <input type="text" size="98" name="productName" required> <br>
         <br>
         Product description<br>
         <textarea name="productDescription" rows="20" cols="100"></textarea><br>
