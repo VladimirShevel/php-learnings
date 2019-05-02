@@ -15,6 +15,7 @@
     <div>
 <form method="POST" id="edit" action="editproduct" enctype="multipart/form-data" >
     <fieldset>
+        <p>Product code: <?= $product->getProductId() ?></p>
         <input type="hidden" id = "productid" name="productid" value="<?= $product->getProductId() ?>">
         <input type="hidden" name="editProduct" value="1">
         <br>

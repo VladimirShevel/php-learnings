@@ -13,10 +13,12 @@
     <div class="container">
     <?php if(!$allProducts) echo '<h2>Trere are no any products in DB, please Add some<h2>' ?>
     <table class="table-bordered table responsive">
+      <tr><th>Code</th><th>Product name</th><th>Product Description</th><th>Price</th><th>Actions</th></tr>
       <?php
         foreach ($allProducts as $data => $row)
             {
-                echo '<tr><td>'.$row->getProductName().'</td>';
+                echo '<tr><td>'.$row->getProductId().'</td>';
+                echo '<td>'.$row->getProductName().'</td>';
                 echo '<td>'.substr($row->getProductDescription(),0, 100).'...</td>';
                 echo '<td>'.$row->getProductPrice().'</td>';
                 echo '<td><a href="details?id='.$row->getProductId().'" class="btn btn-default">Show Details</a>

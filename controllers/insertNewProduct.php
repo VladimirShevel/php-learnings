@@ -13,7 +13,5 @@ include 'functions.php';
             'productDescription' => $productDescription,
             'productPrice' => $productPrice
             ]);
-        echo '<h2>Product added</h2>';
-        sleep(1);
         header('Location: /');
     }
