@@ -104,11 +104,7 @@
                                 $("#nextVal").append('<option>Choose attribut first</option>');
                             }
                         });
-                        } else alert ("There are no any new attributes for for this product");
-                        // $("#btn2").on('click', function () {
-                        //     $("#edit").submit();
-                        //
-                        // })
+                        } else alert ("There are no any new attributes for this product");
                     }
                 });
             });
