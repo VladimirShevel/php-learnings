@@ -43,8 +43,10 @@ function getProductFromEditForm($data)
         if ($flag)
         {
             $string = substr($key, 0, -1);
+
             if ($string == 'attribName')
             {
+
                 $attributes[$value] = current($data);
             }
         }
@@ -54,7 +56,7 @@ function getProductFromEditForm($data)
     {
         foreach ($attributes as $name => $value)
         {
-            $product->setProductAttribute(Attribut::getAttributeByNameValue($name, $value)[0]);
+            $product->setProductAttribute(Attribut::getAttributeByNameValue($name, $value));
         }
     }
     return $product;
@@ -73,10 +75,11 @@ function updateProduct($product)
     App::get('database')->update($sql);
     App::get('database')->clearAttributes($product->getProductid());
 
-    foreach ($product->getProductAttrib() as $attribut)
+
+    foreach ($product->getProductAttrib() as $atr)
     {
-        if ($attribut->code == null) continue;
-        App::get('database')->insert('product_attribute', ['productid'=>$product->getProductid(), 'attributeid' => $attribut->code]);
+        if ($atr->code == null) continue;
+        App::get('database')->insert('product_attribute', ['productid'=>$product->getProductid(), 'attributeid' => $atr->code]);
     }
 }
 
