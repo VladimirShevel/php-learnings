@@ -4,9 +4,7 @@
 class PagesController
 
 {
-
     public function index()
-
     {
 
 
@@ -20,6 +18,10 @@ class PagesController
 
     }
 
+    public function editProduct()
+    {
 
 
+
+    }
 }

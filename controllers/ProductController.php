@@ -2,12 +2,10 @@
 
 class ProductController
 {
-
-    public function deleteProduct()
+    public function storeProduct()
     {
-        //get request to delProduct
-        //delete product from DB
-        //return to index page
+
+
 
     }
 
@@ -18,10 +16,11 @@ class ProductController
 
     }
 
-    public function storeProduct()
+    public function deleteProduct()
     {
-
-
+        //get request to delProduct
+        //delete product from DB
+        //return to index page
 
     }
 
