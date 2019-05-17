@@ -1,5 +1,5 @@
 <?php require 'views/templates/header.php'; ?>
-    <script src="views/js/edit.view.js"></script>
+
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">

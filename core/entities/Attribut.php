@@ -13,6 +13,7 @@ Class Attribut {
 
     public static function getAttributeByNameValue($name, $value)
     {
+
         return (App::get('database'))->selectToClassBySQL('SELECT * from attribute WHERE attribName = "'.$name.'" and attributeValue = "'.$value.'" ORDER BY attribName','Attribut')[0];
     }
 
