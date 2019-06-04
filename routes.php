@@ -1,12 +1,10 @@
 <?php
-use App\Core\Router;
-$router->get('editAtr', 'controllers/editAttr.php');
-$router->get('deleteProduct', 'controllers/deleteProduct.php');
-$router->post('insertProd','controllers/insertNewProduct.php');
-$router->get('addprod', 'views/newProduct.view.php');
-$router->get('deleteAtr','controllers/deleteAttribute.php');
-$router->get('','controllers/index.php');
-$router->post('editproduct','controllers/editproduct.php');
-$router->post('selectattribute','controllers/selectnewattribute.php');
-$router->get('details','controllers/productDetails.php');
-//var_dump($router->routes);
+$router->get('deleteProduct', 'ProductController@delete_product');
+$router->post('update_product','ProductController@update_product');
+$router->get('new_product', 'ProductController@new_product');
+$router->get('deleteAtr','ProductController@deleteAttribute');
+$router->get('','PagesController@index');
+$router->get('details','PagesController@productCard');
+$router->get('edit_product','PagesController@edit_product');
+$router->post('selectattribute','ProductController@addAttribute');
+

@@ -11,15 +11,10 @@ class AttributeController
     public function editAttribute()
     {
 
-
-
     }
 
     public function createAttribute()
     {
 
-
-
     }
-
 }

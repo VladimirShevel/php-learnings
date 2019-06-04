@@ -5,6 +5,7 @@
     ]
   },
   "require": {
-    "twbs/bootstrap": "4.3.1"
+    "twbs/bootstrap": "4.3.1",
+    "buivannguyen/jpreview": "^1.0"
   }
 }

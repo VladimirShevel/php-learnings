@@ -13,6 +13,13 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
+    public function selectRow($table, $column, $value)
+    {
+        $statement = $this->pdo->prepare("SELECT * FROM {$table} WHERE {$column} = {$value}");
+        $statement->execute();
+        return $statement->fetchall(PDO::FETCH_CLASS);
+    }
+
     public function selectColumn($table, $returnedColumn){
         $statement = $this->pdo->prepare("SELECT DISTINCT {$returnedColumn} FROM {$table} ORDER by {$returnedColumn}");
 
@@ -21,19 +28,12 @@ class QueryBuilder
         return $statement->fetchall(PDO::FETCH_COLUMN);
     }
 
-    public function deleteProduct($id)
-    {
-        $statement = $this->pdo->prepare("delete from product where productid = {$id}");
-        $statement ->execute();
-    }
+    public function delete($string)
 
-    public function deleteProductAttribute($string)
     {
         $statement = $this->pdo->prepare($string);
         $statement ->execute();
     }
-
-
 
     public function clearAttributes($productID){
         $statement = $this->pdo->prepare("delete from product_attribute where productid = {$productID}");
@@ -52,6 +52,7 @@ class QueryBuilder
         return $statement->fetchall(PDO::FETCH_COLUMN);
     }
 
+
     public  function selectAttributes($productid, $class)
     {
         $statement = $this->pdo->prepare(
@@ -66,7 +67,7 @@ class QueryBuilder
         );
            $statement->execute();
 
-        return $statement->fetchall(PDO::FETCH_CLASS, $class);
+           return $statement->fetchall(PDO::FETCH_CLASS, $class);
 
 
     }
@@ -88,8 +89,7 @@ class QueryBuilder
     public function selectAllLimit($table, $offset, $limit,$class)
 
     {
-
-        $statement = $this->pdo->prepare("select * from {$table} LIMIT {$offset}, {$limit}");
+       $statement = $this->pdo->prepare("select * from {$table} LIMIT {$offset}, {$limit}");
 
         $statement->execute();
 
@@ -146,10 +146,7 @@ class QueryBuilder
         try {
 
             $statement = $this->pdo->prepare($sql);
-            //var_dump($statement); die();
             $statement->execute($parameters);
-
-            //echo '<h2>Ваш запис додано</h2>';
 
         } catch (Exception $e) {
             error_log($e);

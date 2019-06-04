@@ -1,5 +1,42 @@
 [
     {
+        "name": "buivannguyen/jpreview",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/buivannguyen/jpreview.git",
+            "reference": "642a7b55c754b30ba460aa69fcd400abcdfa457e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/buivannguyen/jpreview/zipball/642a7b55c754b30ba460aa69fcd400abcdfa457e",
+            "reference": "642a7b55c754b30ba460aa69fcd400abcdfa457e",
+            "shasum": ""
+        },
+        "time": "2017-10-08T11:25:34+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nguyen Bui Van",
+                "email": "toi@buivannguyen.com",
+                "homepage": "http://buivannguyen.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "jquery plugin preview image before upload",
+        "homepage": "https://github.com/buivannguyen/jpreview",
+        "keywords": [
+            "jquery plugin preview",
+            "preview image"
+        ]
+    },
+    {
         "name": "twbs/bootstrap",
         "version": "v4.3.1",
         "version_normalized": "4.3.1.0",

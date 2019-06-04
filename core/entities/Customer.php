@@ -11,7 +11,6 @@ class Customer
     public function __toString()
     {
          return 'Hello customer №' . $this->id;
-        // TODO: Implement __toString() method.
     }
 
 

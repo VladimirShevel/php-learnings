@@ -4,8 +4,43 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bc777d41e1926322ab5bae14629fd81",
+    "content-hash": "dd14f9abcf97d7c010caf7d7c7af7b02",
     "packages": [
+        {
+            "name": "buivannguyen/jpreview",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/buivannguyen/jpreview.git",
+                "reference": "642a7b55c754b30ba460aa69fcd400abcdfa457e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/buivannguyen/jpreview/zipball/642a7b55c754b30ba460aa69fcd400abcdfa457e",
+                "reference": "642a7b55c754b30ba460aa69fcd400abcdfa457e",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nguyen Bui Van",
+                    "email": "toi@buivannguyen.com",
+                    "homepage": "http://buivannguyen.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "jquery plugin preview image before upload",
+            "homepage": "https://github.com/buivannguyen/jpreview",
+            "keywords": [
+                "jquery plugin preview",
+                "preview image"
+            ],
+            "time": "2017-10-08T11:25:34+00:00"
+        },
         {
             "name": "twbs/bootstrap",
             "version": "v4.3.1",
