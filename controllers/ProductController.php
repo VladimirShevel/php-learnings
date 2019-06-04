@@ -1,6 +1,5 @@
 <?php
 use App\Core\App;
-require 'functions.php';
 
 class ProductController
 {
